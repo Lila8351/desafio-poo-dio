@@ -2,11 +2,10 @@ package br.com.dio.desafio.dominio;
 
 import java.util.*;
 
-public class Dev {
-    private String nome;
+public class Dev extends User{
     private Set<Conteudo> conteudosInscritos = new LinkedHashSet<>();
     private Set<Conteudo> conteudosConcluidos = new LinkedHashSet<>();
-
+    @Override
     public void inscreverBootcamp(Bootcamp bootcamp){
         this.conteudosInscritos.addAll(bootcamp.getConteudos());
         bootcamp.getDevsInscritos().add(this);
@@ -38,13 +37,8 @@ public class Dev {
     }
 
 
-    public String getNome() {
-        return nome;
-    }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+
 
     public Set<Conteudo> getConteudosInscritos() {
         return conteudosInscritos;
